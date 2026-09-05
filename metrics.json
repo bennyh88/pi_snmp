@@ -1,4 +1,17 @@
 {
-    "collector_status" : 101,
-    "collector_age" : 1991
+    ".1.3.6.1.4.1.99999.1.2": {
+        "name":"agent_status",
+        "value": 1991,
+        "datatype": "gauge"
+    },
+    ".1.3.6.1.4.1.99999.1.1": {
+        "name":"agent_age",
+        "value": 101,
+        "datatype": "integer"
+    },
+    ".1.3.6.1.4.1.99999.1.5": {
+        "name":"other",
+        "value": 101,
+        "datatype": "integer"
+    }
 }
