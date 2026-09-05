@@ -1,0 +1,39 @@
+https://sourceforge.net/p/net-snmp/code/ci/master/tree/local/pass_persisttest
+
+https://net-snmp.sourceforge.io/wiki/index.php/Tut:Extending_snmpd_using_shell_scripts
+
+https://net-snmp.sourceforge.io/wiki/index.php/Net-snmp_extensions
+
+https://dreness.com/wikimedia/index.php?title=Net_SNMP
+
+# snmp walk
+snmpwalk -v3 -l authPriv -u monitor -a SHA -A "passwordSHA" -x AES -X "passwordAES" localhost .1.3.6.1.4.1.99999
+
+# Run in debug interactive mode
+snmpd -f -Lo -Ducd-snmp/pass
+
+
+
+# Output
+[root@omarchy benjamin]# snmpwalk -v3 -l authPriv -u monitor -a SHA -A "passwordSHA" -x AES -X "passwordAES" localhost .1.3.6.1.4.1.99999
+SNMPv2-SMI::enterprises.99999.0.1 = INTEGER: 101
+SNMPv2-SMI::enterprises.99999.0.2 = Gauge32: 1991
+
+
+# debug Output
+ucd-snmp/pass_persist: open_persist_pipe(1,'/data/BenHome/Code/snmp/pi_snmp/pass_persist.py') recurse=0
+ucd-snmp/pass_persist: persistpass-sending:
+getnext
+.1.3.6.1.4.1.99999
+ucd-snmp/pass_persist: open_persist_pipe(1,'/data/BenHome/Code/snmp/pi_snmp/pass_persist.py') recurse=0
+ucd-snmp/pass_persist: persistpass-sending:
+getnext
+.1.3.6.1.4.1.99999.0.1
+ucd-snmp/pass_persist: open_persist_pipe(1,'/data/BenHome/Code/snmp/pi_snmp/pass_persist.py') recurse=0
+ucd-snmp/pass_persist: persistpass-sending:
+getnext
+.1.3.6.1.4.1.99999.0.2
+
+
+
+# Need a way to stop the agent on shutdown.
