@@ -25,7 +25,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 DATA_FILE = SCRIPT_DIR / "metrics.json"
 LOG_FILE = SCRIPT_DIR / f"{Path(__file__).name}.log"
 
-# Set up logging
+# Set up logging ##############################################################
 logger = logging.getLogger(Path(__file__).name)
 logger.setLevel(logging.DEBUG)
 
@@ -40,7 +40,7 @@ formatter = logging.Formatter(
 handler.setFormatter(formatter)
 logger.addHandler(handler)
 
-logger.info("Pass persist script starting")
+logger.info("Collector Initialising")
 
 ###############################################################################
 # Functions

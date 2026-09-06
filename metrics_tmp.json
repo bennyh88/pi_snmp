@@ -1,0 +1,12 @@
+{
+    ".1.3.6.1.4.1.99999.0.3": {
+        "name": "agent_status",
+        "value": 1,
+        "datatype": "integer"
+    },
+    ".1.3.6.1.4.1.99999.0.4": {
+        "name": "agent_age",
+        "value": 0,
+        "datatype": "integer"
+    }
+}
