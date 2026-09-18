@@ -1,0 +1,739 @@
+{
+  "ok": true,
+  "data": {
+    "threads": [],
+    "locks": [
+      {
+        "lock": "RDBMS",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:44.628656 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "eventproc/ClsEventProc_alarms.cpp:957 ClsEventProc::qryNewAttrAlarm"
+      },
+      {
+        "lock": "Ce",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.158337 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "Ce 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.158172 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "EventTrig",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:42:44.755080 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "EventTrig 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:42:44.754842 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "DynamicProcessor",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.075145 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "DynamicProcessor 1Writer FREE",
+        "state": "10-Sep-2026 14:43:45.074966 1183844 rtprocess",
+        "lockReleaseTime": "Ce",
+        "pid": 0,
+        "processName": "0",
+        "lastLockerThread": null,
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "MeaPub",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:44.626211 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "MeaPub 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:44.625885 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "OracleConnect",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:28:41.112129 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "OracleConnect 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "01-Jan-1970 01:00:00.000000 1183844 rtprocess",
+        "pid": 0,
+        "processName": "0",
+        "lastLockerThread": null,
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": null
+      },
+      {
+        "lock": "ScanMngr",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:08.483217 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "ScanMngr 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:08.464734 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "Test",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:28:41.127051 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "Test 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "01-Jan-1970 01:00:00.000000 1183844 rtprocess",
+        "pid": 0,
+        "processName": "0",
+        "lastLockerThread": null,
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": null
+      },
+      {
+        "lock": "TimerTask",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.143462 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "TimerTask 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.143236 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "EventProc_Misc",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:44.650781 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "EventProc_Misc 1Writer FREE",
+        "state": "10-Sep-2026 14:31:01.151623 1183844 rtprocess",
+        "lockReleaseTime": "TimerTask",
+        "pid": 0,
+        "processName": "0",
+        "lastLockerThread": null,
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "EventProc_01",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.077798 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "EventProc_01 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.047526 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "EventProc_02",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.068773 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "EventProc_02 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.039952 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      },
+      {
+        "lock": "EventProc_03",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.088136 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1458 ClsMemQueue::readData"
+      },
+      {
+        "lock": "EventProc_03 1Writer",
+        "state": "FREE",
+        "lockReleaseTime": "10-Sep-2026 14:43:45.055126 1183844 rtprocess",
+        "pid": null,
+        "processName": "0",
+        "lastLockerThread": "0",
+        "waitingToLock": null,
+        "waitingToFree": null,
+        "detail": "ClsMemQueue.cpp:1023 ClsMemQueue::storeInQueue. d_oneWriterMutex"
+      }
+    ],
+    "memoryQueues": [
+      {
+        "type": "Memory",
+        "name": "Ce",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": 10000000,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "EventTrig",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": 10000000,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "DynamicProcessor",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": null,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "MeaPub",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": null,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "OracleConnect",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": 10000000,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "ScanMngr",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": null,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "Test",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": 10000000,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "TimerTask",
+        "msgCount": 0,
+        "increment": 81920,
+        "maxSize": 10000000,
+        "size": 81920,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "EventProc_Misc",
+        "msgCount": 0,
+        "increment": 500000,
+        "maxSize": null,
+        "size": 100000,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "EventProc_01",
+        "msgCount": 0,
+        "increment": 500000,
+        "maxSize": null,
+        "size": 500000,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "EventProc_02",
+        "msgCount": 0,
+        "increment": 500000,
+        "maxSize": null,
+        "size": 500000,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Memory",
+        "name": "EventProc_03",
+        "msgCount": 0,
+        "increment": 500000,
+        "maxSize": null,
+        "size": 500000,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Roll Buf EventProc_Misc",
+        "name": "0",
+        "msgCount": 1,
+        "increment": null,
+        "maxSize": 0,
+        "size": 0,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Roll Buf EventProc_01",
+        "name": "0",
+        "msgCount": 1,
+        "increment": null,
+        "maxSize": 0,
+        "size": 0,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Roll Buf EventProc_02",
+        "name": "0",
+        "msgCount": 1,
+        "increment": null,
+        "maxSize": 0,
+        "size": 0,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Roll Buf EventProc_03",
+        "name": "0",
+        "msgCount": 1,
+        "increment": null,
+        "maxSize": 0,
+        "size": 0,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Roll Buf Dynamics",
+        "name": "0",
+        "msgCount": 1,
+        "increment": null,
+        "maxSize": 0,
+        "size": 0,
+        "used": 0,
+        "usedPct": 0
+      },
+      {
+        "type": "Roll Buf MeaPub",
+        "name": "0",
+        "msgCount": 1,
+        "increment": null,
+        "maxSize": 0,
+        "size": 0,
+        "used": 0,
+        "usedPct": 0
+      }
+    ],
+    "counts": {
+      "Timer List": 253,
+      "EventProc_1": {
+        "Delayed Alarm List": 0,
+        "Secondary Alarm List": 0,
+        "Total Alarm": 6,
+        "Alarm Txn": 2,
+        "Average alarms/txn": 3,
+        "COS Txn": 0,
+        "Job Txn": 0,
+        "Log Event Txn": 0,
+        "Update RDBMS Scalar Value Txn": 0
+      },
+      "EventProc_2": {
+        "Delayed Alarm List": 0,
+        "Secondary Alarm List": 0,
+        "Total Alarm": 6510,
+        "Alarm Txn": 333,
+        "Average alarms/txn": 19.5,
+        "COS Txn": 0,
+        "Job Txn": 0,
+        "Log Event Txn": 6510,
+        "Update RDBMS Scalar Value Txn": 13
+      },
+      "EventProc_3": {
+        "Delayed Alarm List": 0,
+        "Secondary Alarm List": 0,
+        "Total Alarm": 6498,
+        "Alarm Txn": 334,
+        "Average alarms/txn": 19.5,
+        "COS Txn": 2,
+        "Job Txn": 0,
+        "Log Event Txn": 6497,
+        "Update RDBMS Scalar Value Txn": 23
+      },
+      "EventProc_4": {
+        "Delayed Alarm List": 1,
+        "Secondary Alarm List": 0,
+        "Total Alarm": 6451,
+        "Alarm Txn": 332,
+        "Average alarms/txn": 19.4,
+        "COS Txn": 1,
+        "Job Txn": 0,
+        "Log Event Txn": 6456,
+        "Update RDBMS Scalar Value Txn": 16
+      }
+    },
+    "activity": [
+      {
+        "name": "TriggerEval",
+        "time": "01:00:00",
+        "stage1": null,
+        "stage2": null,
+        "stage3": null
+      }
+    ],
+    "performance": {
+      "CE Thread": {
+        "Single Operation": 107930,
+        "Transaction": 620655,
+        "Sync SVAL": 94089,
+        "Sync Value": 0,
+        "Control": 0
+      },
+      "Calculation Engine": {
+        "Trigger CE": 20700448,
+        "Top Level Cascade": 22487985,
+        "CE Defns Evaluated": 22518817,
+        "Recursive Expressions": 170948
+      },
+      "Scan System": {
+        "CE CONTROL()": 0
+      },
+      "Alarm Thread": {
+        "New Alarm": 6,
+        "Request New Text Alarm": 0
+      },
+      "Nms Event Thread": {
+        "GRTV Request Value": 0
+      },
+      "Event Triggers": {},
+      "by attribute id": {
+        "Attached Event Triggers": 1102463,
+        "Attributes Have Triggers": 1098326,
+        "Fired Triggers": 788
+      },
+      "by attribute name": {
+        "Attached Event Triggers": 0,
+        "Attr. Names Have Triggers": 0,
+        "Fired Triggers": 0
+      }
+    },
+    "stores": [
+      {
+        "type": "Tble",
+        "name": "Attributes",
+        "capacity": 26620000,
+        "used": 24012104,
+        "units": "90%",
+        "percentUsed": 24012104,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Tble",
+        "name": "Components",
+        "capacity": 5720000,
+        "used": 5139891,
+        "units": "89%",
+        "percentUsed": 5139891,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Tble",
+        "name": "Limit Sets",
+        "capacity": 36300,
+        "used": 32094,
+        "units": "88%",
+        "percentUsed": 32094,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Text",
+        "name": "Rtdb Text",
+        "capacity": 114400000,
+        "used": 17437259,
+        "units": "15%",
+        "percentUsed": 1060599,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Text",
+        "name": "Component Aliases",
+        "capacity": 171600000,
+        "used": 85681846,
+        "units": "49%",
+        "percentUsed": 5139891,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Text",
+        "name": "mRIDs",
+        "capacity": 5000000,
+        "used": 221416,
+        "units": "4%",
+        "percentUsed": 8477,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Item",
+        "name": "Attribute Statistics",
+        "capacity": 12381600,
+        "used": 11235392,
+        "units": "90%",
+        "percentUsed": 200632,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "Item",
+        "name": "Attribute History",
+        "capacity": 0,
+        "used": 0,
+        "units": "0%",
+        "percentUsed": 0,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Component Alias Lookup",
+        "capacity": 5720000,
+        "used": 5139891,
+        "units": "89%",
+        "percentUsed": 5139891,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Component Attributes",
+        "capacity": 26620000,
+        "used": 24012104,
+        "units": "90%",
+        "percentUsed": 24012104,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Component Hierarchy",
+        "capacity": 5720000,
+        "used": 5139890,
+        "units": "89%",
+        "percentUsed": 5139890,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Component Connectivity",
+        "capacity": 5720000,
+        "used": 3498008,
+        "units": "61%",
+        "percentUsed": 3498008,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Attributes for Periodic",
+        "capacity": 33000,
+        "used": 22756,
+        "units": "68%",
+        "percentUsed": 22756,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Limit Profiles",
+        "capacity": 422400,
+        "used": 223782,
+        "units": "52%",
+        "percentUsed": 223782,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Rtdb Update List",
+        "capacity": 40315000,
+        "used": 18722864,
+        "units": "46%",
+        "percentUsed": 18722864,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Event Triggers",
+        "capacity": 26620000,
+        "used": 1102463,
+        "units": "4%",
+        "percentUsed": 1102463,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Scan System Components",
+        "capacity": 857472,
+        "used": 857442,
+        "units": "99%",
+        "percentUsed": 857442,
+        "items": null,
+        "parameter": null
+      },
+      {
+        "type": "List",
+        "name": "Current Control List",
+        "capacity": 1024,
+        "used": 0,
+        "units": "0%",
+        "percentUsed": 0,
+        "items": null,
+        "parameter": null
+      }
+    ]
+  }
+}

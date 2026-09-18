@@ -1,0 +1,18 @@
+{
+  "ok": true,
+  "data": {
+    "servers": [
+      "BURVMEPN30NMS1"
+    ],
+    "status": {
+      "BURVMEPN30NMS1": null
+    },
+    "transactions": [
+      {
+        "source": "BURVMEPN30NMS1",
+        "target": "BURVMEPN30NMS1",
+        "count": null
+      }
+    ]
+  }
+}

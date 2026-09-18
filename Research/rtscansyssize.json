@@ -1,0 +1,137 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "entry": "FEPS",
+      "itemsUsed": 53,
+      "itemsFree": 199,
+      "itemsTotal": 252,
+      "bytesUsed": 92432,
+      "bytesFree": 347056,
+      "bytesTotal": 439488,
+      "percentUsed": 21,
+      "startUpParameter": "SCANSYS_FEP_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "RTUS",
+      "itemsUsed": 20958,
+      "itemsFree": 13012,
+      "itemsTotal": 33970,
+      "bytesUsed": 1425144,
+      "bytesFree": 884816,
+      "bytesTotal": 2309960,
+      "percentUsed": 61.7,
+      "startUpParameter": "SCANSYS_RTU_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "POINTS",
+      "itemsUsed": 855622,
+      "itemsFree": 129794,
+      "itemsTotal": 985416,
+      "bytesUsed": 82139712,
+      "bytesFree": 12460224,
+      "bytesTotal": 94599936,
+      "percentUsed": 86.8,
+      "startUpParameter": "SCANSYS_SCAN_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "VALUES",
+      "itemsUsed": 855622,
+      "itemsFree": null,
+      "itemsTotal": null,
+      "bytesUsed": 15391602,
+      "bytesFree": 3528398,
+      "bytesTotal": 18920000,
+      "percentUsed": 81.4,
+      "startUpParameter": "SCANSYS_VALUE_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "CONTROL CENTRES",
+      "itemsUsed": 8,
+      "itemsFree": 27,
+      "itemsTotal": 35,
+      "bytesUsed": 672,
+      "bytesFree": 2268,
+      "bytesTotal": 2940,
+      "percentUsed": 22.9,
+      "startUpParameter": "SCANSYS_ICCP_CC_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "ASSOCIATIONS",
+      "itemsUsed": 10,
+      "itemsFree": 16,
+      "itemsTotal": 26,
+      "bytesUsed": 3800,
+      "bytesFree": 6080,
+      "bytesTotal": 9880,
+      "percentUsed": 38.5,
+      "startUpParameter": "SCANSYS_ICCP_ASSN_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "TRANSFERSETS",
+      "itemsUsed": 5,
+      "itemsFree": 342,
+      "itemsTotal": 347,
+      "bytesUsed": 1440,
+      "bytesFree": 98496,
+      "bytesTotal": 99936,
+      "percentUsed": 1.4,
+      "startUpParameter": "SCANSYS_ICCP_TSET_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "REMOTE TRANSFERSETS",
+      "itemsUsed": 0,
+      "itemsFree": 347,
+      "itemsTotal": 347,
+      "bytesUsed": 0,
+      "bytesFree": 99936,
+      "bytesTotal": 99936,
+      "percentUsed": 0,
+      "startUpParameter": "SCANSYS_ICCP_REM_TSET_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "ICCP REMOTE POINTS",
+      "itemsUsed": 130,
+      "itemsFree": 21421,
+      "itemsTotal": 21551,
+      "bytesUsed": 30160,
+      "bytesFree": 4969672,
+      "bytesTotal": 4999832,
+      "percentUsed": 0.6,
+      "startUpParameter": "SCANSYS_ICCP_POINT_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "ICCP LOCAL POINTS",
+      "itemsUsed": 10616,
+      "itemsFree": 10935,
+      "itemsTotal": 21551,
+      "bytesUsed": 2462912,
+      "bytesFree": 2536920,
+      "bytesTotal": 4999832,
+      "percentUsed": 49.3,
+      "startUpParameter": "SCANSYS_ICCP_LOCAL_POINT_SIZE",
+      "units": "Bytes"
+    },
+    {
+      "entry": "REMOTE TSET POINTS",
+      "itemsUsed": 0,
+      "itemsFree": 1744,
+      "itemsTotal": 1744,
+      "bytesUsed": 0,
+      "bytesFree": 299968,
+      "bytesTotal": 299968,
+      "percentUsed": 0,
+      "startUpParameter": "SCANSYS_ICCP_REM_TSET_PT_SIZE",
+      "units": "Bytes"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "function": "IncidentOutageChanged",
+      "count": 32
+    },
+    {
+      "function": "JobUpdated",
+      "count": 1
+    },
+    {
+      "function": "IncidentDetailsChanged",
+      "count": 32
+    },
+    {
+      "function": "IncidentCreated",
+      "count": 3
+    },
+    {
+      "function": "IncidentDelogged",
+      "count": 1
+    },
+    {
+      "function": "IncidentLogCreated",
+      "count": 48
+    },
+    {
+      "function": "WorkPackageCreated",
+      "count": 14
+    },
+    {
+      "function": "JobCreated",
+      "count": 14
+    },
+    {
+      "function": "WorkPackageUpdated",
+      "count": 929
+    }
+  ]
+}

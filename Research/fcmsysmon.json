@@ -1,0 +1,117 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "name": "Component Pool",
+      "capacity": 5720000,
+      "used": 5139891,
+      "option": "-C",
+      "default": "None (i.e. required)",
+      "percentUsed": 89.9
+    },
+    {
+      "name": "Dynamic Pool",
+      "capacity": 10010000,
+      "used": 6282846,
+      "option": "-C,-F",
+      "default": "Calculated as C + 3*F*C",
+      "percentUsed": 62.8
+    },
+    {
+      "name": "List Pool",
+      "capacity": 11440000,
+      "used": 8637898,
+      "option": "-L",
+      "default": "C*2",
+      "percentUsed": 75.5
+    },
+    {
+      "name": "Comp Hash",
+      "capacity": 5720017,
+      "used": 4066441,
+      "option": "-H",
+      "default": "C",
+      "percentUsed": 71.1
+    },
+    {
+      "name": "Connection Pool",
+      "capacity": 616000,
+      "used": 558769,
+      "option": "-c",
+      "default": "C/4",
+      "percentUsed": 90.7
+    },
+    {
+      "name": "Connection Hash",
+      "capacity": 616003,
+      "used": 395806,
+      "option": "-a",
+      "default": "c",
+      "percentUsed": 64.3
+    },
+    {
+      "name": "HotSpot Pool",
+      "capacity": 4290000,
+      "used": 2538067,
+      "option": "-h",
+      "default": "C 3/4",
+      "percentUsed": 59.2
+    },
+    {
+      "name": "HotSpot Hash",
+      "capacity": 4290017,
+      "used": 2052809,
+      "option": "-b",
+      "default": "h",
+      "percentUsed": 47.9
+    },
+    {
+      "name": "CompLink Alias",
+      "capacity": 572023,
+      "used": 403894,
+      "option": "-y",
+      "default": "C / 10",
+      "percentUsed": 70.6
+    },
+    {
+      "name": "CompLink Assoc",
+      "capacity": 1144046,
+      "used": 680998,
+      "option": "-y",
+      "default": "-y * 2",
+      "percentUsed": 59.5
+    },
+    {
+      "name": "Attribute Pool",
+      "capacity": 22990000,
+      "used": 20894976,
+      "option": "-A",
+      "default": "0",
+      "percentUsed": 90.9
+    },
+    {
+      "name": "Fast Attributes",
+      "capacity": 500,
+      "used": 459,
+      "option": null,
+      "default": "500 (fixed)",
+      "percentUsed": 91.8
+    },
+    {
+      "name": "String Pool",
+      "capacity": 7663333,
+      "used": 1436187,
+      "option": "-s",
+      "default": "A/3",
+      "percentUsed": 18.7
+    },
+    {
+      "name": "String Data Pool",
+      "capacity": 15326666,
+      "used": 5757068,
+      "option": "-s,-d",
+      "default": "Calculated as s*(<round down>((d-1)/8)+1)",
+      "percentUsed": 37.6
+    }
+  ]
+}

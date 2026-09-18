@@ -1,0 +1,14 @@
+{
+  "ok": true,
+  "data": [
+    {
+      "hostName": "BURVMEPN30NMS1",
+      "pri": 1,
+      "id": "A",
+      "status": 1,
+      "type": 1,
+      "lastTxn": 257277661,
+      "lastError": 0
+    }
+  ]
+}
