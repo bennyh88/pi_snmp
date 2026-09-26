@@ -9,7 +9,7 @@ class PluginBase(ABC):
     @abstractmethod
     def name(self) -> str:
         pass
-
+   
     @abstractmethod
     def collect(self) -> MetricSet:
         pass

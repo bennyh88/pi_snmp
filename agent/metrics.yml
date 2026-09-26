@@ -1,0 +1,60 @@
+config:
+  base_oid: .1.3.6.1.4.1.99999
+
+  builtin:
+    plugin_oid: 0
+    metrics:
+      collector_status:
+        oid: 1
+        datatype: integer
+
+      collector_age:
+        oid: 2
+        datatype: gauge
+
+      agent_status:
+        oid: 3
+        datatype: integer
+
+      agent_age:
+        oid: 4
+        datatype: gauge
+  
+  plugins:
+    priority_server:
+      plugin_oid: 1
+      metrics:
+        priority_server_rtprocess:
+          oid: 1
+          datatype: integer
+
+        priority_server_tcsaim:
+          oid: 2
+          datatype: integer
+
+        priority_server_rtpif:
+          oid: 3
+          datatype: integer
+    
+    builtin:
+      plugin_oid: 0
+      metrics:
+        collector_status:
+          oid: 1
+          datatype: integer
+
+        collector_age:
+          oid: 2
+          datatype: gauge
+
+        agent_status:
+          oid: 3
+          datatype: integer
+
+        agent_age:
+          oid: 4
+          datatype: gauge
+
+
+
+

@@ -17,9 +17,9 @@ class Metric:
     pathname: str
     oid: str
     datatype: str # MetricType
-    source_plugin: str
+    plugin_name: str
+    plugin_source: str
     value: Any | None = None
-    
 
     # timestamp: datetime = field(
     #     default_factory=lambda: datetime.now(timezone.utc)

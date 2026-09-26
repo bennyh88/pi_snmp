@@ -1,4 +1,6 @@
 #!/data/BenHome/Code/snmp/.venv/bin/python
+from metric import Metric, MetricType
+from metric_set import MetricSet
 
 import json
 import sys
@@ -6,6 +8,9 @@ import yaml
 from pathlib import Path
 import logging
 from time import time
+import importlib
+from plugin_base import PluginBase
+from metric_model import MetricModel
 
 ###############################################################################
 # Globals
@@ -85,16 +90,133 @@ def export_metrics(metrics):
         COLLECTOR_STATUS = 2 # Failed to Open metric file
         return {}
 
+# Reads in YAML file to create config object
+def read_config():
+    with open(CONFIG_FILE, "r") as f:
+        config = yaml.safe_load(f)
+    return config["config"]
+
+
+def parse_config(config):
+    
+    base_oid = config["base_oid"]
+
+    for plugin in config["plugins"]:
+        plugin_metrics = []
+        plugin_oid = config["plugins"][plugin]["plugin_oid"]
+
+        for metric in config["plugins"][plugin]["metrics"]:
+            metric_oid = config["plugins"][plugin]["metrics"][metric]["oid"]
+
+            plugin_metrics.append(
+                Metric(
+                    name=metric,
+                    metric_type=config["plugins"][plugin]["metrics"][metric]["datatype"],
+                    oid=f"{base_oid}.{plugin_oid}.{metric_oid}"
+                )
+            )
+
+        metric_set = MetricSet(
+            plugin_name=plugin,
+            metrics=plugin_metrics
+        )
+
+        print(json.dumps(metric_set.to_dict(), indent=4))
+
+def parse_config(config):
+    
+    base_oid = config["base_oid"]
+
+    for plugin in config["plugins"]:
+        plugin_metrics = []
+        plugin_oid = config["plugins"][plugin]["plugin_oid"]
+
+        for metric in config["plugins"][plugin]["metrics"]:
+            metric_oid = config["plugins"][plugin]["metrics"][metric]["oid"]
+
+            plugin_metrics.append(
+                Metric(
+                    name=metric,
+                    metric_type=config["plugins"][plugin]["metrics"][metric]["datatype"],
+                    oid=f"{base_oid}.{plugin_oid}.{metric_oid}"
+                )
+            )
+
+        metric_set = MetricSet(
+            plugin_name=plugin,
+            metrics=plugin_metrics
+        )
+
+        print(json.dumps(metric_set.to_dict(), indent=4))
+
+
+def init_plugin(plugin_name):
+
+    module =  importlib.import_module(
+        f"plugins.{plugin_name}.{plugin_name}"
+    )
+
+    plugin_class = getattr(module, "Plugin")
+    plugin = plugin_class()
+
+    return plugin
+    
+
+def get_plugin_metrics():
+    metrics = {}
+
+    for plugin in plugins:
+        metrics.update(plugin.collect())
+    
+    return metrics
+    
+
+
+###############################################################################
+# Setup, run once on startup
+###############################################################################
+
+metric_mapping = {}
+
+# Will hold instances of all the plugins loaded
+plugins: list[PluginBase | None] = []
+
+def setup():
+    logger.debug("setup")
+    print("setup")
+
+    # Read in config from YAML file
+    config = read_config()
+
+    # 
+    metric_model = MetricModel(config)
+
+
+    # Initialse Plugins
+    for plugin in config["plugins"]:
+        if plugin != 'builtin':
+            logger.debug(f"Initialising PLugin: {plugin}")
+            plugins.append(init_plugin(plugin))
+
+    
+
+    
+
+    
+
 
 ###############################################################################
 # Main
 ###############################################################################
 
 def main():
+    setup()
+
     logger.debug("main started")
     print("main started")
 
-    metrics = get_agent_metrics()
+    metrics = get_plugin_metrics()
+    # metrics = get_agent_metrics()
     export_metrics(metrics)
 
 

@@ -22,3 +22,6 @@ class MetricSet:
                 for metric in self.metrics
             ]
         }
+
+    def get_plugin_name(self) -> str:
+        return self.plugin_name
