@@ -1,23 +1,20 @@
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 from logging import Logger
-
+from pathlib import Path
 from metric import Metric
 import json
 from time import time
 
 
 class MetricModel:
-    metrics_list: dict[str, Metric | None] = {}
-    logger: Logger
-
-    # Builtin metrics
-    collector_start_time: int = int(time())
-    collector_status: dict = {}
-
 
     def __init__(self, logger: Logger, config: dict):
         self.logger: Logger = logger
+        self.metrics_list: dict[str, Metric] = {}
+        # Builtin metrics
+        self.collector_start_time: int = int(time())
+        self.collector_status: dict = {}
 
         base_oid: str = config["base_oid"]
         plugins: dict = config["plugins"]
@@ -48,11 +45,12 @@ class MetricModel:
                 )
 
 
-    def __update_collector_status(self, plugin_name: str, status: int) -> None:
+    def _update_collector_status(self, plugin_name: str, status: int) -> None:
         self.collector_status[plugin_name] = status
 
 
-    def __load_builtin_metrics(self) -> dict | None:
+    def _load_builtin_metrics(self) -> dict | None:
+        self.logger.debug(f"Collector Status: {self.collector_status}")
         return {
             "collector_status": sum(self.collector_status.values()),
             "collector_age": int(time()) - self.collector_start_time
@@ -60,70 +58,108 @@ class MetricModel:
 
 
     # loads the plugin_source file into a dict
-    def __load_metrics(self, metric: Metric) -> dict | None: 
+    def _load_metrics(self, plugin_source: str) -> dict | None: 
         try:
-            with open(metric.plugin_source, "r") as f:
+            with open(plugin_source, "r") as f:
                 return json.load(f)
 
         except FileNotFoundError:
-            self.logger.error(f"Plugin Source file not found: {metric.plugin_source}")
+            self.logger.error(f"Plugin Source file not found: {plugin_source}")
 
         except PermissionError:
-            self.logger.error(f"Permission denied reading: {metric.plugin_source}")
+            self.logger.error(f"Permission denied reading: {plugin_source}")
 
         except json.JSONDecodeError as err:
             self.logger.error(
-                f"Invalid JSON in {metric.plugin_source}: "
+                f"Invalid JSON in {plugin_source}: "
                 f"line {err.lineno}, column {err.colno}: {err.msg}"
             )
 
         except OSError as err:
-            self.logger.error(f"Failed to read {metric.plugin_source}: {err}")
+            self.logger.error(f"Failed to read {plugin_source}: {err}")
 
         except Exception:
-            self.logger.exception(f"Unexpected error loading {metric.plugin_source}")
+            self.logger.exception(f"Unexpected error loading {plugin_source}")
 
         return None
 
 
-    def update_metric(self, metric: Metric) -> Metric:
+    def _update_plugin_metrics(self, m: Metric) -> None:
 
-        if metric.plugin_source == "builtin":
-            data = self.__load_builtin_metrics()
-        else:
-            data = self.__load_metrics(metric)
+        if m.plugin_source == "builtin":
+            self._update_builtin_metric(m)
+            return
+        
+        # If the file has not changed, then no need to reload
+        datafile = Path(m.plugin_source)
+        datafile_timestamp = datafile.stat().st_mtime
+
+        if datafile_timestamp == m.timestamp:
+            self.logger.debug(f"plugin_source for {m.plugin_name} has not updated, don't reload")
+            return
+        self.logger.debug(f"plugin_source for {m.plugin_name} updated, reload data")
+
+        data: dict = self._load_metrics(m.plugin_source)
+        
+        if data is None:
+            self.logger.warning(f"Failed to load data from {m.plugin_source}")
+            self._update_collector_status(m.plugin_name, 1)
+            return None
+
+        # Update all metrics associated with the plugin
+        for metric in self.metrics_list.values():
+ 
+            if metric.plugin_name == m.plugin_name:
+
+                # make sure data exists for the metric
+                if metric.name not in data:
+                    self.logger.warning(f"Failed to find key for {metric.pathname} in plugin_source")
+                    self._update_collector_status(metric.plugin_name, 1)
+                    return None
+
+                metric.value = data.get(metric.name)
+                metric.timestamp = datafile_timestamp
+
+        # reached here, so set status to success for the plugin
+        self._update_collector_status(m.plugin_name, 0)
+
+
+    def _update_builtin_metric(self, metric: Metric) -> Metric | None:
+
+        data = self._load_builtin_metrics()
 
         if data is None:
             self.logger.warning(f"Failed to load data {metric.oid}")
-            self.__update_collector_status(metric.plugin_name, 1)
+            self._update_collector_status(metric.plugin_name, 1)
             return None
 
-        # update the metric with the value
-        if data.get(metric.name) is None:
+        if metric.name not in data:
             self.logger.warning(f"Failed to find key for {metric.pathname} in plugin_source")
-            self.__update_collector_status(metric.plugin_name, 1)
+            self._update_collector_status(metric.plugin_name, 1)
             return None
         
         metric.value = data.get(metric.name)
 
-        self.__update_collector_status(metric.plugin_name, 0)
+        self._update_collector_status(metric.plugin_name, 0)
 
         return metric
 
 
-    def get_metric(self, oid: str) -> Metric:
+    def get_metric(self, oid: str) -> Metric | None:
+
         metric: Metric = self.metrics_list.get(oid)
+
         if metric is None:
             self.logger.warning(f"Metric not found for {oid}")
-            self.__update_collector_status(metric.plugin_name, 1)
             return None
 
-        metric = self.update_metric(metric)
-
+        # Make sure we are up to date
+        self._update_plugin_metrics(metric)
+        
         return metric
 
 
-    def get_next_metric(self, current_oid: str) -> Metric:
+    def get_next_metric(self, current_oid: str) -> Metric | None:
         sorted_oids = sorted(self.metrics_list.keys())
 
         for oid in sorted_oids:
@@ -133,7 +169,7 @@ class MetricModel:
         return None
 
 
-    def to_string(self):     
+    def to_string(self) -> str:     
         return json.dumps(
             [[metric.to_dict() for metric in self.metrics_list.values()]],
             indent=4

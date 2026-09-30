@@ -19,11 +19,8 @@ class Metric:
     datatype: str # MetricType
     plugin_name: str
     plugin_source: str
+    timestamp: float | None = None
     value: Any | None = None
-
-    # timestamp: datetime = field(
-    #     default_factory=lambda: datetime.now(timezone.utc)
-    # )
 
     def to_dict(self) -> dict:
         data = asdict(self)

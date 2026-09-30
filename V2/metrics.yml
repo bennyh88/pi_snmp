@@ -14,8 +14,8 @@ config:
           datatype: gauge
 
     priority_server:
-      plugin_oid: 1
-      plugin_source: V2\priority_server_metrics.json
+      plugin_oid: 2
+      plugin_source: V2\Plugins\priority_server\metrics.json
 
       metrics:
         rtprocess:
@@ -29,6 +29,168 @@ config:
         rtpif:
           oid: 3
           datatype: integer
+
+    connected_clients:
+      plugin_oid: 3
+      plugin_source: V2\Plugins\connected_clients\metrics.json
+
+      metrics:
+        total:
+          oid: 1
+          datatype: integer
+
+        other:
+          oid: 2
+          datatype: integer
+
+        FieldEngineer:
+          oid: 3
+          datatype: integer
+
+        TelecontrolEngineer:
+          oid: 4
+          datatype: integer
+
+        TelecontrolTechnician:
+          oid: 5
+          datatype: integer
+
+        ViewOnly:
+          oid: 6
+          datatype: integer
+
+        DataAdmin:
+          oid: 7
+          datatype: integer
+
+        DispatchManager:
+          oid: 8
+          datatype: integer
+
+        ControlEngineerEHV:
+          oid: 9
+          datatype: integer
+
+        ScadaCommissionEngineer:
+          oid: 10
+          datatype: integer
+
+        Scheduler:
+          oid: 11
+          datatype: integer
+
+        CallTaker:
+          oid: 12
+          datatype: integer
+
+        Dispatcher:
+          oid: 13
+          datatype: integer
+
+        FieldEngineerPlus:
+          oid: 14
+          datatype: integer
+
+        ControlEngineerLV:
+          oid: 15
+          datatype: integer
+
+        ControlEngineerPlus:
+          oid: 16
+          datatype: integer
+
+        DrawingOffice:
+          oid: 17
+          datatype: integer
+
+        ControlSupport:
+          oid: 18
+          datatype: integer
+
+        SystemManager:
+          oid: 19
+          datatype: integer
+
+        SymbolAdmin:
+          oid: 20
+          datatype: integer
+
+        ReportAdmin:
+          oid: 21
+          datatype: integer
+
+        FaultManager:
+          oid: 22
+          datatype: integer
+
+        Geoview:
+          oid: 23
+          datatype: integer
+
+        OutagePlanner:
+          oid: 24
+          datatype: integer
+        
+        StormCallTaker:
+          oid: 25
+          datatype: integer
+
+        SystemAdmin:
+          oid: 26
+          datatype: integer
+
+        SuppMessageTeam:
+          oid: 27
+          datatype: integer
+
+        AlarmManager:
+          oid: 28
+          datatype: integer
+
+        AssetManagementTLR:
+          oid: 29
+          datatype: integer
+
+        PaknetProject:
+          oid: 30
+          datatype: integer
+
+        DSOEngineer:
+          oid: 31
+          datatype: integer
+
+        VegetationManager:
+          oid: 32
+          datatype: integer
+
+        TeleCommissioningTechnician:
+          oid: 33
+          datatype: integer
+
+        Planner:
+          oid: 34
+          datatype: integer
+
+        AssetManagementEditor:
+          oid: 35
+          datatype: integer
+
+        HVSwitchingCommissioningEng:
+          oid: 36
+          datatype: integer
+
+        FieldEngineerRTU:
+          oid: 37
+          datatype: integer
+
+        ControlEngineerRemote:
+          oid: 38
+          datatype: integer
+
+        TeleCommissioningEngineer:
+          oid: 39
+          datatype: integer
+
     
 
 
